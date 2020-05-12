@@ -1,0 +1,500 @@
+/* ------------------------公共样式类 -----------------------*/
+html,
+body {
+  height: 100%;
+  font-size: 62.5%;
+  background: url('../img/bg.png') no-repeat;
+  background-size: cover;
+  font-family: 'Microsoft YaHei';
+}
+.justify-vertical {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.vertical-align {
+  display: flex;
+  align-items: center;
+}
+.no-gutters {
+  padding: 0;
+}
+.margin-clear {
+  margin-left: 0;
+  margin-right: 0;
+}
+#main {
+  height: 100%;
+}
+.span-border,
+.span-border-sub {
+  position: absolute;
+  padding: 7px;
+  border-style: solid;
+  border-color: #fff;
+}
+.span-border-sub {
+  padding: 4px;
+}
+.span1 {
+  top: -0.5px;
+  left: -0.5px;
+  border-width: 2px 0 0 2px;
+}
+.span2 {
+  top: -0.5px;
+  right: -0.5px;
+  border-width: 2px 2px 0 0;
+}
+.span3 {
+  bottom: -0.5px;
+  left: -0.5px;
+  border-width: 0 0 2px 2px;
+}
+.span4 {
+  bottom: -0.5px;
+  right: -0.5px;
+  border-width: 0 2px 2px 0;
+}
+.span-sub-1 {
+  top: 4px;
+  left: 4px;
+  border-width: 2px 0 0 2px;
+}
+.span-sub-2 {
+  top: 4px;
+  right: 4px;
+  border-width: 2px 2px 0 0;
+}
+.span-sub-3 {
+  bottom: 4px;
+  left: 4px;
+  border-width: 0 0 2px 2px;
+}
+.span-sub-4 {
+  bottom: 4px;
+  right: 4px;
+  border-width: 0 2px 2px 0;
+}
+.title {
+  position: relative;
+  width: 100%;
+  height: 4.7%;
+}
+.team .title {
+  height: 12%;
+}
+.title .title-bg {
+  width: 165px;
+  border-top: 25px solid #b1ad73;
+  border-right: 30px solid transparent;
+  border-left: 30px solid transparent;
+  margin: 0 auto;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+.tit {
+  position: absolute;
+  top: 0;
+  margin-bottom: 0;
+  height: 25px;
+  color: #fff;
+  width: 100%;
+  z-index: 999;
+}
+.content-left .title-bg,
+.team .title-bg,
+.content-right .title-bg {
+  border-top: 25px solid #899fb7;
+}
+.sub-title{
+  position: absolute;
+  top: 5%;
+  left: 1.6rem;
+  color: #fff;
+  z-index: 999;
+  font-size: 1.6rem;
+}
+.iconfont{
+  position: relative;
+  display: inline-block;
+  font-weight: 500;
+  font-size: 18px;
+}
+.icon1{
+  color: #0061b0;
+}
+.icon2{
+  color: #1296db;
+  left: -15px;
+}
+.icon3{
+  position: relative;
+  display: inline-block;
+  left: -20px;
+  font-size: 2rem;
+}
+.graph{
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+}
+/* ------------------------header -----------------------*/
+.header {
+  /* padding-top: 20px; */
+  margin: 0;
+  height: 10%;
+}
+.header-left .time {
+  /* margin-top: 1.5rem; */
+  font-size: 1.8rem;
+  color: #b1ad73;
+  position: relative;
+  top: 50%;
+  transform: translateY(-40%);
+  /* margin-bottom: 0; */
+}
+.header-center .header-name {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 3.5rem;
+  color: #b1ad73;
+}
+.header-center .header-name .logo {
+  color: #b1ad73;
+}
+.nav {
+  position: relative;
+  top: 50%;
+  transform: translateY(-40%);
+  width: 100%;
+  /* margin-top: 5px; */
+}
+.nav li {
+  position: relative;
+  width: 20%;
+  z-index: 100;
+  margin-left: -0.5px;
+  margin-right: -0.5px;
+}
+.nav li a {
+  border: 1px solid #b1ad73;
+  color: #fff;
+  font-size: 1.2rem;
+  height: 100%;
+  width: 100%;
+  /* margin: -1px; */
+}
+.nav li a:hover {
+  background-color: #b1ad73;
+}
+.nav li a.active {
+  background-color: #b1ad73;
+}
+.dropdown-menu {
+  width: 102%;
+  height: 100.5%;
+  /* background-color: #010925; */
+  background: url('../img/bg.png') no-repeat;
+  background-size: cover;
+  min-width: 0;
+  border-radius: 0;
+  padding: 0;
+  margin: -0.5px;
+}
+.nav-item:last-child:hover .dropdown-menu {
+  display: block;
+}
+.dropdown-item:hover {
+  background-color: inherit;
+  color: #fff;
+}
+/* ------------------------content ---------------------------*/
+.content {
+  margin: 0;
+  height: 89%;
+}
+/* ------------------------content-left -----------------------*/
+.content-left {
+  position: relative;
+  padding: 0;
+}
+.content-border {
+  border: 0.5px solid #b1ad73;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  padding: 0 8px;
+  background-color: #010e32;
+}
+.content-left .module{
+  width: 100%;
+  height: 31.65%;
+  padding: 4px 0;
+  margin-left: 0;
+  margin-right: 0;
+}
+.content-left .row .col-12,
+.content-right .row .col-12 {
+  border: 1px solid #353f47;
+  position: relative;
+  background-color: #07163e;
+}
+#map{
+  background-color: #07163e;
+  z-index: 1;
+}
+.organize_type .graph{
+  height: 86%;
+}
+#bar{
+  background-color: #07163e;
+}
+.pie{
+  height: 100%;
+  margin: 0;
+}
+#pie1,#pie2{
+  height: 100%;
+  /* border: 1px solid red; */
+}
+/* ------------------------content-center -----------------------*/
+
+/* 用于修改数据的模态框 */
+.operator{
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  font-size: 1.75rem;
+  padding: 0;
+  border-radius: 0;
+  line-height: normal;
+}
+.operator:focus,
+.operator:hover{
+      box-shadow: none;
+      background-color: transparent;
+      border: none;
+}
+
+
+.content-center {
+  padding: 0 8px;
+}
+.contribution,
+.team {
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+}
+.contribution {
+  height: 60%;
+  padding-bottom: 4px;
+}
+.team {
+  height: 40%;
+  padding-top: 4px;
+}
+.contribution .content-border {
+  position: relative;
+  padding: 0;
+}
+.team > .content-border {
+  padding: 0 4px;
+}
+.team-info {
+  height: 86%;
+  margin-left: 0;
+  margin-right: 0;
+}
+.team-info .content-border {
+  border: 1px solid #353f47;
+}
+.team-left,
+.team-right {
+  height: 100%;
+  padding: 0 2px;
+}
+.team-left-top {
+  height: 30%;
+  padding-bottom: 2px;
+}
+.team-left-bottom {
+  height: 70%;
+  padding-top: 2px;
+}
+.contribution .title{
+  position: relative;
+  width: 100%;
+  height: 8.7%;
+}
+.contri-data{
+  height: 32%;
+  margin: 0;
+  /* border: 1px solid red; */
+}
+.contri-graph{
+  height: 58.3%;
+  /* border: 1px solid red; */
+  margin: 0;
+}
+.contri-data .data-module+.data-module{
+  border-left:1px solid #353f47;
+}
+.contri-data .total{
+  height: 55%;
+  /* border: 1px solid red; */
+}
+.contri-data .classify{
+  height: 45%;
+  /* border: 1px solid red; */
+}
+.total .server{
+  color: #b1ad73;
+  font-size: 2rem;
+}
+.total .number{
+  color: #59b2df;
+  font-size: 4rem;
+  font-weight: 600;
+}
+.classify .row{
+  margin: 0;
+}
+.classify p{
+  color: #b1ad73;
+  font-size: 1.5rem;
+}
+.classify .num{
+  color: #59b2df;
+  font-size: 3rem;
+}
+.people{
+  margin: 0;
+  height: 100%;
+}
+.people .quantity,
+.people .num{
+  height: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.people .server{
+  color: #fff;
+  margin-bottom: 0;
+  font-size: 1.6rem;
+}
+.people .num{
+  color: #59b2df;
+}
+.svg-gender{
+  height: 40%;
+  /* border: 1px solid red; */
+}
+.bar-gender{
+  height: 60%;
+  /* border: 1px solid red; */
+}
+/* ------------------------content-right -----------------------*/
+.content-right {
+  padding: 0;
+}
+.content-right .content-border>.row:nth-of-type(n+2):nth-of-type(-n+4) {
+  height: 18.65%;
+  margin-left: 0;
+  margin-right: 0;
+  padding: 4px 0;
+}
+.content-right .content-border>.row:last-child {
+  height: 39%;
+  margin-left: 0;
+  margin-right: 0;
+  padding: 4px 0;
+}
+.content-right .sub-title{
+  position: relative;
+  margin-bottom:0;
+  top: 30%;
+}
+.content-right .title-content{
+  height: 30%;
+}
+.content-right .graph{
+  position: relative;
+  height: 70%;
+  margin: 0;
+  /* border: 1px solid red; */
+
+}
+.distribution .title-content{
+  height: 15%;
+}
+.distribution .graph{
+  height: 85%;
+}
+.ins{
+  height: 100%;
+}
+.ins-num{
+  text-align: center;
+}
+.ins-name{
+  height: 40%;
+}
+.ins-num{
+  height: 60%;
+}
+.ins-info{
+  color: #b1ad73;
+  font-size: 15px;
+  margin-bottom: 0;
+  text-align: center;
+  font-size: 1.8rem;
+}
+.ins-num .number{
+  color: #59b2df;
+  font-size: 3rem;
+}
+.home .ins-num .ins-num-contain{
+  /* height: 68%; */
+  height: auto;
+  width: 92%;
+}
+/* .home .graph .col-4:nth-child(1) .ins-num .ins-num-contain{
+  background-color: #03bc8e;
+}
+.home .graph .col-4:nth-child(2) .ins-num .ins-num-contain{
+  background-color: #97a41e;
+}
+.home .graph .col-4:nth-child(3) .ins-num .ins-num-contain{
+  background-color: #13abd9;
+} */
+.home .ins-num .ins-num-contain .home-data{
+  height: 100%;
+  width: 100%;
+  margin: 0;
+}
+.home .ins-num .ins-num-contain .home-data li{
+  height: 100%;
+  width: 16.6%;
+  float: left;
+  overflow: hidden;
+}
+.home .ins-num .ins-num-contain .home-data li .num-img{
+  position: relative;
+  overflow: hidden;
+}
+.home-data li .num-img img{
+  width: 100%;
+  height: 100%;
+}
+/* .home-data li .num-img .clock-end{
+  display: none;
+} */

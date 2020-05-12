@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../static/css/normalize.css">
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/css/font.css">
+
+    <link rel="stylesheet" href="../static/css/style.css">
+    <title>Bi</title>
+</head>
+<body>
+    <div id="main" class="container-fluid">
+        <!-- header -->
+        <div class="row header">
+            <div class="col-3 header-left text-center">
+                <h1 class="time"></h1>
+            </div>
+            <div class="col-6 header-center">
+                <h1 class="header-name text-center">悦华安养<span class="logo">®</span>智慧养老大数据中心</h1>
+            </div>
+            <div class="col-3 header-right text-center no-gutters">
+                <ul class="nav justify-content-start">
+                    <li class="nav-item"><a href="javascript:;" class="nav-link ">发展历程</a></li>
+                    <li class="nav-item"><a href="javascript:;" class="nav-link active">概览</a></li>
+                    <li class="nav-item"><a href="javascript:;" class="nav-link">床态图</a></li>
+                    <li class="nav-item"><a href="javascript:;" class="nav-link">远程看护</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">安全管控</a>
+                        <div class="dropdown-menu">
+                          <a class="dropdown-item text-center" href="#">视频监控</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- content -->
+        <div class="row content">
+            <!-- content-left -->
+            <div class="col-3 content-left">
+                <div class="content-border">
+                    <span class="span-border span1"></span>
+                    <span class="span-border span2"></span>
+                    <span class="span-border span3"></span>
+                    <span class="span-border span4"></span>
+                    <span class="span-border-sub span-sub-1"></span>
+                    <span class="span-border-sub span-sub-2"></span>
+                    <span class="span-border-sub span-sub-3"></span>
+                    <span class="span-border-sub span-sub-4"></span>
+                    <!-- 标题 -->
+                    <div class="title">
+                        <h3 class="text-center tit">服务组织</h3>
+                        <div class="title-bg"></div>
+                    </div>
+                    <!-- 组织分布 -->
+                    <div class="row organize_map module" >
+                        <div class="col-12 no-gutters" >
+                            <h2 class="sub-title">
+                                <span class="iconfont icon1">&#xe603;</span>
+                                <span class="iconfont icon2">&#xe603;</span>
+                                <span class="icon3">组织分布</span> 
+                            </h2>
+                            <div class="graph" id="map">
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 组织类型 -->
+                    <div class="row organize_type module">
+                        <div class="col-12 no-gutters">
+                            <h2 class="sub-title">
+                                <span class="iconfont icon1">&#xe603;</span>
+                                <span class="iconfont icon2">&#xe603;</span>
+                                <span class="icon3">组织类型</span> 
+                            </h2>
+                            <div class="graph" id="bar">
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 组织等级 -->
+                    <div class="row organize_level module">
+                        <div class="col-12 no-gutters">
+                            <h2 class="sub-title">
+                                <span class="iconfont icon1">&#xe603;</span>
+                                <span class="iconfont icon2">&#xe603;</span>
+                                <span class="icon3">组织等级</span> 
+                            </h2>
+                            <div class="row pie">
+                                <div class="col-6 no-gutters" id="pie1">
+
+                                </div>
+                                <div class="col-6 no-gutters" id="pie2">
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- content-center -->
+            <div class="col-6 content-center">
+                <div class="row contribution">
+                    <div class="content-border">
+                        <span class="span-border span1"></span>
+                        <span class="span-border span2"></span>
+                        <span class="span-border span3"></span>
+                        <span class="span-border span4"></span>
+                        <span class="span-border-sub span-sub-1"></span>
+                        <span class="span-border-sub span-sub-2"></span>
+                        <span class="span-border-sub span-sub-3"></span>
+                        <span class="span-border-sub span-sub-4"></span>
+                        <!-- 标题 -->
+                        <div class="title">
+                            <h3 class="text-center tit">
+                                <button id="btnData" type="button" class="btn btn-primary operator" data-toggle="modal" data-target="#contribute"> 
+                                    行业贡献
+                                </button>
+                            </h3>
+                            <div class="modal fade" id="contribute" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalCenterTitle">页面数据</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form>
+                                                <!-- 服务组织总数 -->
+                                                <div class="form-group row">
+                                                    <label for="orgNum" class="col-2 col-form-label">服务组织总数</label>
+                                                    <div class="col-10">
+                                                        <input type="number" class="form-control" id="orgNum" placeholder="">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label for="subOrgNum-01" class="col-2 col-form-label">综合体</label>
+                                                    <div class="col-4">
+                                                        <input type="number" class="form-control" id="subOrgNum-01" placeholder="">
+                                                    </div>
+                                                    <label for="subOrgNum-02" class="col-2 col-form-label">居家</label>
+                                                    <div class="col-4">
+                                                        <input type="number" class="form-control" id="subOrgNum-02" placeholder="">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label for="subOrgNum-03" class="col-2 col-form-label">机构</label>
+                                                    <div class="col-4">
+                                                        <input type="number" class="form-control" id="subOrgNum-03" placeholder="">
+                                                    </div>
+                                                    <label for="subOrgNum-04" class="col-2 col-form-label">残疾人之家</label>
+                                                    <div class="col-4">
+                                                        <input type="number" class="form-control" id="subOrgNum-04" placeholder="">
+                                                    </div>
+                                                </div>
+                                                <!-- 服团队总数 -->
+                                                <div class="form-group row">
+                                                    <label for="teamNum" class="col-2 col-form-label">服务团队总数</label>
+                                                    <div class="col-10">
+                                                    <input type="number" class="form-control" id="teamNum" placeholder="">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label for="subTeamNum-01" class="col-2 col-form-label">志愿者</label>
+                                                    <div class="col-2">
+                                                        <input type="number" class="form-control" id="subTeamNum-01" placeholder="">
+                                                    </div>
+                                                    <label for="subTeamNum-02" class="col-2 col-form-label">护理员1</label>
+                                                    <div class="col-2">
+                                                        <input type="number" class="form-control" id="subTeamNum-02" placeholder="">
+                                                    </div>
+                                                    <label for="subTeamNum-03" class="col-2 col-form-label">护理员2</label>
+                                                    <div class="col-2">
+                                                        <input type="number" class="form-control" id="subTeamNum-03" placeholder="">
+                                                    </div>
+                                                </div>
+                                                <!-- 服务对象总数 -->
+                                                <div class="form-group row">
+                                                    <label for="severNum" class="col-2 col-form-label">服务对象总数</label>
+                                                    <div class="col-10">
+                                                    <input type="number" class="form-control" id="severNum" placeholder="">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label for="subSeverNum-01" class="col-2 col-form-label">男性</label>
+                                                    <div class="col-4">
+                                                        <input type="number" class="form-control" id="subSeverNum-01" placeholder="">
+                                                    </div>
+                                                    <label for="subSeverNum-02" class="col-2 col-form-label">女性</label>
+                                                    <div class="col-4">
+                                                        <input type="number" class="form-control" id="subSeverNum-02" placeholder="">
+                                                    </div>
+                                                </div>
+                                                <!-- 服务数据总数 -->
+                                                <div class="form-group row">
+                                                    <label for="dataNum" class="col-2 col-form-label">服务数据总数</label>
+                                                    <div class="col-10">
+                                                    <input type="number" class="form-control" id="dataNum" placeholder="">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label for="subDataNum-01" class="col-2 col-form-label">站点服务</label>
+                                                    <div class="col-4">
+                                                        <input type="number" class="form-control" id="subDataNum-01" placeholder="">
+                                                    </div>
+                                                    <label for="subDataNum-02" class="col-2 col-form-label">上门服务</label>
+                                                    <div class="col-4">
+                                                        <input type="number" class="form-control" id="subDataNum-02" placeholder="">
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+                                            <button type="button" class="btn btn-primary" onclick="contribute()" data-dismiss="modal">确定</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="title-bg"></div>
+                        </div>
+                        <div class="row contri-data">
+                            <div class="col-3 no-gutters data-module text-center">
+                                <div class="total">
+                                        <p class="server">
+                                            <i class="iconfont">&#xe62c;</i>&emsp;服务组织总数
+                                        </p>
+                                    <h1 class="number" id="organize-number">36</h1>
+                                </div>
+                                <div class="classify">
+                                    <div class="row">
+                                        <div class="col-3 no-gutters text-center">
+                                            <p class="detail">综合体</p>
+                                            <h4 class="num" id="organize-number-01">6</h4>
+                                        </div>
+                                        <div class="col-3 no-gutters text-center">
+                                            <p class="detail">居家</p>
+                                            <h4 class="num" id="organize-number-02">28</h4>
+                                        </div>
+                                        <div class="col-2 no-gutters text-center">
+                                            <p class="detail">机构</p>
+                                            <h4 class="num" id="organize-number-03">8</h4>
+                                        </div>
+                                        <div class="col-4 no-gutters text-center">
+                                            <p class="detail">残疾人之家</p>
+                                            <h4 class="num" id="organize-number-04">12</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-3 no-gutters data-module text-center">
+                                <div class="total">
+                                    <p class="server"><i class="iconfont">&#xe62c;</i>&emsp;服务团队总数</p>
+                                    <h1 class="number" id="serverTeam-number">198</h1>
+                                </div>
+                                <div class="classify">
+                                    <div class="row">
+                                        <div class="col-4 no-gutters">
+                                            <p class="detail">志愿者</p>
+                                            <h4 class="num" id="serverTeam-number-01">36</h4>
+                                        </div>
+                                        <div class="col-4 no-gutters">
+                                            <p class="detail">护理员</p>
+                                            <h4 class="num" id="serverTeam-number-02">36</h4>
+                                        </div>
+                                        <div class="col-4 no-gutters">
+                                            <p class="detail">护理员</p>
+                                            <h4 class="num" id="serverTeam-number-03">36</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-3 no-gutters data-module text-center">
+                                <div class="total">
+                                    <p class="server"><i class="iconfont">&#xe62c;</i>&emsp;服务对象总数</p>
+                                    <h1 class="number" id="serverObj">1,198</h1>
+                                </div>
+                                <div class="classify">
+                                    <div class="row">
+                                        <div class="col-6 no-gutters text-center">
+                                            <p class="detail">男性</p>
+                                            <h4 class="num" id="serverObj-01">55%</h4>
+                                        </div>
+                                        <div class="col-6 no-gutters text-center">
+                                            <p class="detail">女性</p>
+                                            <h4 class="num" id="serverObj-02">45%</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-3 no-gutters data-module text-center">
+                                <div class="total">
+                                    <p class="server"><i class="iconfont">&#xe62c;</i>&emsp;服务数据总数</p>
+                                    <h1 class="number" id="serData">98,198</h1>
+                                </div>
+                                <div class="classify">
+                                    <div class="row">
+                                        <div class="col-6 no-gutters text-center">
+                                            <p class="detail">站点服务</p>
+                                            <h4 class="num" id="serData-01">5,569</h4>
+                                        </div>
+                                        <div class="col-6 no-gutters text-center">
+                                            <p class="detail">上门服务</p>
+                                            <h4 class="num" id="serData-02">5,569</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row contri-graph" id="contribution">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="row team">
+                    <div class="content-border col-12 no-gutters">
+                        <span class="span-border span1"></span>
+                        <span class="span-border span2"></span>
+                        <span class="span-border span3"></span>
+                        <span class="span-border span4"></span>
+                        <span class="span-border-sub span-sub-1"></span>
+                        <span class="span-border-sub span-sub-2"></span>
+                        <span class="span-border-sub span-sub-3"></span>
+                        <span class="span-border-sub span-sub-4"></span>
+                        <!-- 标题 -->
+                        <div class="title">
+                            
+                                <h3 class="text-center tit">
+                                    <button id="btnTeam" type="button" class="btn btn-primary operator" data-toggle="modal" data-target="#serverTeam">
+                                        服务团队
+                                    </button>
+                                </h3>
+                            </button>
+                            <div class="modal fade" id="serverTeam" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered" role="document">
+                                    <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalCenterTitle">页面数据</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form>
+                                            <!-- 居家服务人数 -->
+                                            <div class="form-group row">
+                                                <label for="pension-01" class="col-2 col-form-label">居家服务人数</label>
+                                                <div class="col-2">
+                                                    <input type="number" class="form-control" id="pension-01" placeholder="">
+                                                </div>
+                                                <label for="pension-02" class="col-2 col-form-label">机构服务人数</label>
+                                                <div class="col-2">
+                                                    <input type="number" class="form-control" id="pension-02" placeholder="">
+                                                </div>
+                                                <label for="pension-03" class="col-2 col-form-label">志愿者</label>
+                                                <div class="col-2">
+                                                    <input type="number" class="form-control" id="pension-03" placeholder="">
+                                                </div>
+                                            </div>
+                                            <!-- 性别|年龄 -->
+                                            <!-- <div class="form-group row">
+                                                <label for="gender-01" class="col-2 col-form-label">男性</label>
+                                                <div class="col-4">
+                                                    <input type="number" class="form-control" id="gender-01" placeholder="">
+                                                </div>
+                                                <label for="gender-02" class="col-2 col-form-label">女性</label>
+                                                <div class="col-4">
+                                                    <input type="number" class="form-control" id="gender-02" placeholder="">
+                                                </div>
+                                            </div> -->
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+                                        <button type="button" class="btn btn-primary" onclick="serverTeam()" data-dismiss="modal">确定</button>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="title-bg"></div>
+                        </div>
+                        <div class="row team-info">
+                            <div class="col-6 team-left">
+                                <div class="row team-left-top margin-clear">
+                                    <div class="content-border">
+                                        <div class="row people">
+                                            <div class="col-4 no-gutters peo-module text-center">
+                                                <div class="quantity">
+                                                    <p class="server">居家服务人数</p>
+                                                </div>
+                                                <div class="num">
+                                                    <h2 class="number" id="people-01">1189</h2>
+                                                </div>
+                                            </div>
+                                            <div class="col-4 no-gutters peo-module text-center">
+                                                <div class="quantity">
+                                                    <p class="server">机构服务人数</p>
+                                                </div>
+                                                <div class="num">
+                                                    <h2 class="number" id="people-02">1189</h2>
+                                                </div>
+                                            </div>
+                                            <div class="col-4 no-gutters peo-module text-center">
+                                                <div class="quantity">
+                                                    <p class="server">志愿者</p>
+                                                </div>
+                                                <div class="num">
+                                                    <h2 class="number" id="people-03">1189</h2>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row team-left-bottom margin-clear">
+                                    <div class="content-border">
+                                        <h2 class="sub-title">
+                                            <span class="iconfont icon1">&#xe603;</span>
+                                            <span class="iconfont icon2">&#xe603;</span>
+                                            <span class="icon3">人员类型</span> 
+                                        </h2>
+                                        <div class="graph" id="type">
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6 team-right">
+                                <div class="content-border">
+                                    <h2 class="sub-title">
+                                        <span class="iconfont icon1">&#xe603;</span>
+                                        <span class="iconfont icon2">&#xe603;</span>
+                                        <span class="icon3">性别&nbsp;|&nbsp;年龄</span> 
+                                    </h2>
+                                    <div class="graph" id="">
+                                        <div class="svg-gender" id="svg-gender">
+                                            
+                                        </div>
+                                        <div class="bar-gender" id="bar-gender">
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- content-right -->
+            <div class="col-3 content-right">
+                <div class="content-border">
+                    <span class="span-border span1"></span>
+                    <span class="span-border span2"></span>
+                    <span class="span-border span3"></span>
+                    <span class="span-border span4"></span>
+                    <span class="span-border-sub span-sub-1"></span>
+                    <span class="span-border-sub span-sub-2"></span>
+                    <span class="span-border-sub span-sub-3"></span>
+                    <span class="span-border-sub span-sub-4"></span>
+                    <!-- 标题 -->
+                    <div class="title">
+                        <h3 class="text-center tit">
+                            <button id="pensionBtn" type="button" class="btn btn-primary operator" data-toggle="modal" data-target="#pension">
+                                服务数据
+                            </button>
+                        </h3>
+                        <div class="modal fade" id="pension" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalCenterTitle">页面数据</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form>
+                                            <!-- 居家 -->
+                                            <div class="form-group row">
+                                                <label for="pensionNum-01" class="col-2 col-form-label pr-0">总服务量</label>
+                                                <div class="col-2">
+                                                    <input type="number" class="form-control" id="pensionNum-01" placeholder="">
+                                                </div>
+                                                <label for="pensionNum-02" class="col-2 col-form-label pr-0">站点服务量</label>
+                                                <div class="col-2">
+                                                    <input type="number" class="form-control" id="pensionNum-02" placeholder="">
+                                                </div>
+                                                <label for="pensionNum-03" class="col-2 col-form-label pr-0">上门服务量</label>
+                                                <div class="col-2">
+                                                    <input type="number" class="form-control" id="pensionNum-03" placeholder="">
+                                                </div>
+                                            </div>
+                                            <!-- 机构 -->
+                                            <div class="form-group row">
+                                                <label for="insiNum-01" class="col-2 col-form-label pr-0">总床位数</label>
+                                                <div class="col-2">
+                                                    <input type="number" class="form-control" id="insiNum-01" placeholder="">
+                                                </div>
+                                                <label for="insiNum-02" class="col-2 col-form-label pr-0">喘息服务量</label>
+                                                <div class="col-2">
+                                                    <input type="number" class="form-control" id="insiNum-02" placeholder="">
+                                                </div>
+                                                <label for="insiNum-03" class="col-2 col-form-label pr-0">家庭养老床位</label>
+                                                <div class="col-2">
+                                                    <input type="number" class="form-control" id="insiNum-03" placeholder="">
+                                                </div>
+                                            </div>
+                                            <!-- 运营中心 -->
+                                            <div class="form-group row">
+                                                <label for="manageNum-01" class="col-2 col-form-label pr-0">客咨总量</label>
+                                                <div class="col-2">
+                                                    <input type="number" class="form-control" id="manageNum-01" placeholder="">
+                                                </div>
+                                                <label for="manageNum-02" class="col-2 col-form-label pr-0">外呼总量</label>
+                                                <div class="col-2">
+                                                    <input type="number" class="form-control" id="manageNum-02" placeholder="">
+                                                </div>
+                                                <label for="manageNum-03" class="col-2 col-form-label pr-0">客诉量</label>
+                                                <div class="col-2">
+                                                    <input type="number" class="form-control" id="manageNum-03" placeholder="">
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+                                        <button type="button" class="btn btn-primary" onclick="serveData()" data-dismiss="modal">确定</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="title-bg"></div>
+                    </div>
+                    <div class="row home">
+                        <div class="col-12 no-gutters">
+                            <div class="title-content">
+                                <h2 class="sub-title">
+                                    <span class="iconfont icon1">&#xe603;</span>
+                                    <span class="iconfont icon2">&#xe603;</span>
+                                    <span class="icon3">居家</span> 
+                                </h2>
+                            </div>
+                            <div class="graph row" id="">
+                                <div class="col-4 ins no-gutters all-number">
+                                    <div class="ins-name">
+                                        <p class="ins-info">总服务量</p>
+                                    </div>
+                                    <div class="ins-num">
+                                        <div class="ins-num-contain mx-auto">
+                                            <ul class="home-data home-data1 list-unstyled clearfix" id="time1">
+                                                <li>
+                                                    <div class="num-img">
+                                                        <img src="../static/img/time1-0.png" alt="" class="clock-start digit-1">
+                                                        <!-- <img src="../static/img/time1-0.png" alt="" class="clock-end"> -->
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="num-img">
+                                                        <img src="../static/img/time1-0.png" alt="" class="clock-start digit-2">
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="num-img">
+                                                        <img src="../static/img/time1-0.png" alt="" class="clock-start digit-3">
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="num-img">
+                                                        <img src="../static/img/time1-0.png" alt="" class="clock-start digit-4">
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="num-img">
+                                                        <img src="../static/img/time1-0.png" alt="" class="clock-start digit-5">
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="num-img">
+                                                        <img src="../static/img/time1-0.png" alt="" class="clock-start digit-6">
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-4 ins no-gutters station-number">
+                                    <div class="ins-name">
+                                        <p class="ins-info">站点服务量</p>
+                                    </div>
+                                    <div class="ins-num">
+                                        <div class="ins-num-contain mx-auto">
+                                            <ul class="home-data home-data1 list-unstyled" id="time2">
+                                                 <li>
+                                                    <div class="num-img">
+                                                        <img src="../static/img/time2-0.png" alt="" class="clock-start">
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="num-img">
+                                                        <img src="../static/img/time2-0.png" alt="" class="clock-start">
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="num-img">
+                                                        <img src="../static/img/time2-0.png" alt="" class="clock-start">
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="num-img">
+                                                        <img src="../static/img/time2-0.png" alt="" class="clock-start">
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="num-img">
+                                                        <img src="../static/img/time2-0.png" alt="" class="clock-start">
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="num-img">
+                                                        <img src="../static/img/time2-0.png" alt="" class="clock-start">
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-4 ins no-gutters visit-number">
+                                    <div class="ins-name">
+                                        <p class="ins-info">上门服务量</p>
+                                    </div>
+                                    <div class="ins-num">
+                                        <div class="ins-num-contain mx-auto">
+                                            <ul class="home-data home-data1 list-unstyled" id="time3">
+                                                 <li>
+                                                    <div class="num-img">
+                                                        <img src="../static/img/time3-0.png" alt="" class="clock-start">
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="num-img">
+                                                        <img src="../static/img/time3-0.png" alt="" class="clock-start">
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="num-img">
+                                                        <img src="../static/img/time3-0.png" alt="" class="clock-start">
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="num-img">
+                                                        <img src="../static/img/time3-0.png" alt="" class="clock-start">
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="num-img">
+                                                        <img src="../static/img/time3-0.png" alt="" class="clock-start">
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="num-img">
+                                                        <img src="../static/img/time3-0.png" alt="" class="clock-start">
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row institution">
+                        <div class="col-12 no-gutters">
+                            <div class="title-content">
+                                <h2 class="sub-title">
+                                    <span class="iconfont icon1">&#xe603;</span>
+                                    <span class="iconfont icon2">&#xe603;</span>
+                                    <span class="icon3">机构</span> 
+                                </h2>
+                            </div>
+                            <div class="graph row" id="">
+                                <div class="col-4 ins no-gutters">
+                                    <div class="ins-name">
+                                        <p class="ins-info">总床位数</p>
+                                    </div>
+                                    <div class="ins-num">
+                                        <h1 class="number" id="ins-01">1189</h1>
+                                    </div>
+                                </div>
+                                <div class="col-4 ins no-gutters">
+                                    <div class="ins-name">
+                                        <p class="ins-info">喘息服务量</p>
+                                    </div>
+                                    <div class="ins-num">
+                                        <h1 class="number"  id="ins-02">890</h1>
+                                    </div>
+                                </div>
+                                <div class="col-4 ins no-gutters">
+                                    <div class="ins-name">
+                                        <p class="ins-info">家庭养老床位</p>
+                                    </div>
+                                    <div class="ins-num">
+                                        <h1 class="number"  id="ins-03">998</h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row operating">
+                        <div class="col-12 no-gutters">
+                            <div class="title-content">
+                                <h2 class="sub-title">
+                                    <span class="iconfont icon1">&#xe603;</span>
+                                    <span class="iconfont icon2">&#xe603;</span>
+                                    <span class="icon3">7*24小时运营中心</span> 
+                                </h2>
+                            </div>
+                            <div class="graph row" id="">
+                                <div class="col-4 ins no-gutters">
+                                    <div class="ins-name">
+                                        <p class="ins-info">客咨总量</p>
+                                    </div>
+                                    <div class="ins-num">
+                                        <h1 class="number" id="oper-01">1189</h1>
+                                    </div>
+                                </div>
+                                <div class="col-4 ins no-gutters">
+                                    <div class="ins-name">
+                                        <p class="ins-info">外呼总量</p>
+                                    </div>
+                                    <div class="ins-num">
+                                        <h1 class="number" id="oper-02">890</h1>
+                                    </div>
+                                </div>
+                                <div class="col-4 ins no-gutters">
+                                    <div class="ins-name">
+                                        <p class="ins-info">客诉量</p>
+                                    </div>
+                                    <div class="ins-num">
+                                        <h1 class="number" id="oper-03">0</h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row distribution">
+                        <div class="col-12 no-gutters">
+                            <div class="title-content">
+                                <h2 class="sub-title">
+                                    <span class="iconfont icon1">&#xe603;</span>
+                                    <span class="iconfont icon2">&#xe603;</span>
+                                    <span class="icon3">服务分布数据</span> 
+                                </h2>
+                            </div>
+                            <div class="graph" id="serverData">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../static/js/jquery-3.4.1.min.js"></script>
+    <script src="../static/js/bootstrap.bundle.min.js"></script>
+    <script src="../static/js/bootstrap.min.js"></script>
+    <!-- <script src="../static/js/less.min.js" ></script> -->
+    <!-- less.watch()监听less文件的活动，实时（无需刷新，稍微延迟） -->
+    <!-- <script>less.watch()</script> -->
+    <script src="../static/js/echarts.min.js"></script>
+    <!-- <script src="../static/js/echarts-gl.min.js"></script> -->
+    <script src="../static/js/operator.js"></script>
+    <script src="../static/js/china.js"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=3.0&ak=1RmiAxAvNO1is9ra0IqPWAW4EKdBfthP"></script>
+    <script src="../static/js/bmap.js"></script>
+    <script src="../static/js/echart.js"></script>
+    <script src="../static/js/home.js"></script>
+    <script>
+        $(function(){
+            // 动态设置居家时钟表高度
+            $(".num-img").height($(".clock-start").height());
+        })
+    </script>
+</body>
+</html>
