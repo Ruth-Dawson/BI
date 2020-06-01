@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* ------------------------公共样式类 -----------------------*/
 html,
 body {
@@ -25,4 +26,33 @@ body {
 }
 #main {
   height: 100%;
+=======
+/* ------------------------公共样式类 -----------------------*/
+html,
+body {
+  height: 100%;
+  font-size: 62.5%;
+  background: url('../img/bg.png') no-repeat;
+  background-size: cover;
+  font-family: 'Microsoft YaHei';
+}
+.justify-vertical {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.vertical-align {
+  display: flex;
+  align-items: center;
+}
+.no-gutters {
+  padding: 0;
+}
+.margin-clear {
+  margin-left: 0;
+  margin-right: 0;
+}
+#main {
+  height: 100%;
+>>>>>>> 52cd9babf1d67fca74aa1094b5942190e0d025da
 }
